@@ -1,7 +1,16 @@
 #variables
-sninstance = "https://dev13456.service-now.com"
-sninstanceuser = "itil"
-sninstancepwd = "itilpass"
+import sys
+if len(sys.argv) < 4:
+	warning = """
+	Please provide 3 parameters in the format instancename, user, password
+	e.g. dev1234 itiluser itiluserpassword
+	"""
+	print(warning)
+	sys.exit()
+
+sninstance = "https://" + sys.argv[1] + ".service-now.com"
+sninstanceuser = sys.argv[2]
+sninstancepwd = sys.argv[3]
 
 #selenium setup
 print('start of login')
@@ -29,6 +38,20 @@ username.send_keys(str(sninstanceuser))
 password.send_keys(str(sninstancepwd))
 login_attempt = browser.find_element(By.ID, "sysverb_login")
 login_attempt.click()
+print('end of login')
+
+#confirm login
+time.sleep(5)
+#move to new incident page
+browser.get(str(sninstance) + "/incident.do")
+print('current url after login is ' + browser.current_url)
+expected = 'incident.do'
+print('expected url after login is ' + expected)
+if expected in browser.current_url:
+    print ('login success!')
+else:
+    print ('could not access incident page, check login details')
+    exit(1)
 print('end of login')
 
 #create incident
