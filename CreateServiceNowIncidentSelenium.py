@@ -41,7 +41,7 @@ login_attempt.click()
 print('end of login')
 
 #confirm login
-time.sleep(5)
+#time.sleep(5)
 #move to new incident page
 browser.get(str(sninstance) + "/incident.do")
 print('current url after login is ' + browser.current_url)
@@ -56,7 +56,7 @@ print('end of login')
 
 #create incident
 print('logged in, now creating incident')
-time.sleep(5)
+#time.sleep(5)
 browser.get(str(sninstance) + "/incident.do")
 assignmentGroup = browser.find_element(By.ID,"sys_display.incident.assignment_group")
 assignmentGroup.send_keys('Help Desk',Keys.RETURN)
