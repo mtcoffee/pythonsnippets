@@ -1,8 +1,11 @@
-name: hello-world
-on: push
+name: running-job #name of workflow aka github action
+on: 
+  push: #any git push (change)
+    paths:
+      - 'Dockerfile' #change to dockerfile
 jobs:
-  my-job:
-    runs-on: ubuntu-latest
+  simplejob: #name of job
+    runs-on: ubuntu-latest #use github hosted runner - https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#jobsjob_idruns-on
     steps:
-      - name: my-step
-        run: echo "Hello World!"
+      - name: sample bash output #name of step
+        run: echo "Running Job!" #run this command
