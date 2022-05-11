@@ -3,8 +3,8 @@ on:
   push: #any git push (change)
     paths:
       - 'Dockerfile' #change to dockerfile
-    branches:
-    - master #within master branch
+ #   branches:
+ #   - master #within master branch
 
 jobs:
   build:
