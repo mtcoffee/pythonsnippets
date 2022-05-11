@@ -2,6 +2,8 @@ FROM python:alpine
 MAINTAINER meatsac "matt.tremblay@outlook.com"
 #A Simple docker file to create an ephemeral container to run python/selenium scripts
 
+LABEL org.opencontainers.image.source https://github.com/meatsac/pythonsnippets
+
 WORKDIR /usr/src/app
 
 RUN echo "http://dl-4.alpinelinux.org/alpine/latest-stable/main/" >> /etc/apk/repositories && \
