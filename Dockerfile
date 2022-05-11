@@ -1,6 +1,6 @@
 FROM python:alpine
 MAINTAINER meatsac "matt.tremblay@outlook.com"
-#A simple docker file to create an ephemeral container to run python/selenium scripts
+#A Simple docker file to create an ephemeral container to run python/selenium scripts
 
 WORKDIR /usr/src/app
 
