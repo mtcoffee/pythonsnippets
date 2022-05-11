@@ -25,4 +25,4 @@ jobs:
           # relative path to the place where source code with Dockerfile is located
           context: ./
           push: true
-          tags: meatsac/PythonSnippets:latest
+          tags: ghcr.io/${{ github.repository }}:${{ github.sha }}
