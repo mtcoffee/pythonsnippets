@@ -1,4 +1,4 @@
-name: running-job #name of workflow aka github action
+name: BuildImage #name of workflow aka github action
 on: 
   push: #any git push (change)
     paths:
