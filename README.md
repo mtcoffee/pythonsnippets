@@ -7,6 +7,6 @@ A linked github package/docker image is available to simplify requirements like 
 docker run -i --rm --name pythoncontainer \
 -v "$PWD":/usr/src/myapp \
 -w /usr/src/myapp \
-ghcr.io/meatsac/alpine-python-selenium-chromium \
+ghcr.io/meatsac/pythonsnippets \
 python scriptname.py
 ```
