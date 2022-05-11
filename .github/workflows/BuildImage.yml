@@ -10,21 +10,19 @@ jobs:
   build:
     name: 'Build' #name of job
     runs-on: ubuntu-latest #use github hosted runner - https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#jobsjob_idruns-on
-    permissions:
-      packages: write
     steps:
+      - name: Checkout
+        uses: actions/checkout@v2
       - name: Login to Github Packages
         uses: docker/login-action@v1
         with:
           registry: ghcr.io
           username: "meatsac" #${{ github.actor }}
           password: ${{ secrets.PACKAGES_TOKEN }}
-      - name: "Build:checkout"
-        uses: actions/checkout@v2
       - name: Build and push
         uses: docker/build-push-action@v3
         with:
           # relative path to the place where source code with Dockerfile is located
           context: ./
           push: true
-          tags: meatsac/alpine-python-selenium-chromium2:latest
+          tags: meatsac/PythonSnippets:latest
