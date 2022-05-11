@@ -10,6 +10,8 @@ jobs:
   build:
     name: 'Build' #name of job
     runs-on: ubuntu-latest #use github hosted runner - https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#jobsjob_idruns-on
+    permissions:
+      packages: write
     steps:
       - name: Login to Github Packages
         uses: docker/login-action@v1
