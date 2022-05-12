@@ -6,6 +6,9 @@ LABEL org.opencontainers.image.source https://github.com/meatsac/pythonsnippets
 
 WORKDIR /usr/src/app
 
+COPY ./scripts /scripts
+
+
 RUN echo "http://dl-4.alpinelinux.org/alpine/latest-stable/main/" >> /etc/apk/repositories && \
         echo "http://dl-4.alpinelinux.org/alpine/latest-stable/community" >> /etc/apk/repositories
 
