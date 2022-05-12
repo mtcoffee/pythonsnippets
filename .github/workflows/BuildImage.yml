@@ -26,3 +26,9 @@ jobs:
           context: ./
           push: true
           tags: ghcr.io/${{ github.repository }}:latest
+      - name: Cleanup Packages        
+        uses: actions/delete-package-versions@v3
+        with: 
+          package-name: ${{ github.repository }}
+          min-versions-to-keep: 3
+          delete-only-pre-release-versions: "true"
