@@ -29,6 +29,6 @@ jobs:
       - name: Cleanup Packages        
         uses: actions/delete-package-versions@v3
         with: 
-          package-name: ${{ github.repository }}
+          package-name: pythonsnippets
           min-versions-to-keep: 3
           delete-only-pre-release-versions: "true"
