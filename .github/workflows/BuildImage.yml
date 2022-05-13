@@ -6,6 +6,7 @@ on:
  #   branches:
  #   - master #within master branch
 
+#run the build
 jobs:
   build:
     name: 'Build' #name of job
@@ -26,11 +27,17 @@ jobs:
           context: ./
           push: true
           tags: ghcr.io/${{ github.repository }}:latest
- #     - name: Cleanup Packages        
- #       uses: actions/delete-package-versions@v3 #not working - https://github.com/actions/delete-package-versions/issues/57
- #       with: 
- #         owner: 'meatsac'
- #         repo: 'pythonsnippets'
- #        package-name: 'pythonsnippets'
- #         min-versions-to-keep: 3
- #         delete-only-pre-release-versions: "true"
+          
+  #run the cleanup        
+  cleanup:
+    name: cleanup
+    runs-on: ubuntu-latest
+    needs: build
+    steps:        
+    - uses: actions/delete-package-versions@v3 #not working - https://github.com/actions/delete-package-versions/issues/57
+      with: 
+        owner: 'meatsac'
+        repo: 'pythonsnippets'
+        package-name: 'pythonsnippets'
+        min-versions-to-keep: 3
+        delete-only-pre-release-versions: "true"
