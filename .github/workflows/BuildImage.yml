@@ -37,7 +37,7 @@ jobs:
     - uses: actions/delete-package-versions@v3 #not working - https://github.com/actions/delete-package-versions/issues/57
       with: 
         owner: 'meatsac'
-        repo: 'packages'
+        repo: 'pythonsnippets'
         package-name: 'pythonsnippets'
         min-versions-to-keep: 3
         delete-only-pre-release-versions: "true"
