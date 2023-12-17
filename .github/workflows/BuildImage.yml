@@ -49,7 +49,7 @@ jobs:
                 }
             }
         env:
-          OWNER: meatsac
+          OWNER: mtcoffee
           PACKAGE_NAME: pythonsnippets
           PER_PAGE: 100
           
@@ -61,7 +61,7 @@ jobs:
 #    steps:        
 #    - uses: actions/delete-package-versions@v3 #not working - https://github.com/actions/delete-package-versions/issues/57
 #      with: 
-#        owner: 'meatsac'
+#        owner: 'mtcoffee'
 #        repo: 'pythonsnippets'
 #        package-name: 'pythonsnippets'
 #       min-versions-to-keep: 3
