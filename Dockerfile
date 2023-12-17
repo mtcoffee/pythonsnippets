@@ -1,8 +1,8 @@
 FROM python:alpine
-MAINTAINER meatsac "matt.tremblay@outlook.com"
+MAINTAINER mtcoffee "matt.tremblay@outlook.com"
 #A simple docker file to create an ephemeral container to run python/selenium scripts
 
-LABEL org.opencontainers.image.source https://github.com/meatsac/pythonsnippets
+LABEL org.opencontainers.image.source https://github.com/mtcoffee/pythonsnippets
 
 WORKDIR /usr/src/app
 
