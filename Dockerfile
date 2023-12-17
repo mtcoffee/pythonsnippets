@@ -1,6 +1,6 @@
 FROM python:alpine
 MAINTAINER mtcoffee "matt.tremblay@outlook.com"
-#A simple docker file to create an ephemeral container to run python/selenium scripts
+#A simple docker file to create an ephemeral container to run python/selenium scripts.
 
 LABEL org.opencontainers.image.source https://github.com/mtcoffee/pythonsnippets
 
