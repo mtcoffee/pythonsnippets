@@ -9,7 +9,7 @@ To run your own scripts run the docker container and call the scripts directory 
 docker run -i --rm --name pythoncontainer \
 -v "$PWD":/usr/src/myapp \
 -w /usr/src/myapp \
-ghcr.io/meatsac/pythonsnippets \
+ghcr.io/mtcoffee/pythonsnippets \
 python /scripts/CreateServiceNowIncidentSelenium.py
 ```
 
@@ -19,6 +19,6 @@ To run your own scripts run the docker container with your script in the current
 docker run -i --rm --name pythoncontainer \
 -v "$PWD":/usr/src/myapp \
 -w /usr/src/myapp \
-ghcr.io/meatsac/pythonsnippets \
+ghcr.io/mtcoffee/pythonsnippets \
 python scriptname.py
 ```
